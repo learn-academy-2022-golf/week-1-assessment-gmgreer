@@ -51,4 +51,4 @@ const dataTypes = ["number", "string", "Boolean", "undefined"]
 console.log(typeof dataTypes.length)
 
 // a) Your answer: "number"
-// b) Verify and explain: Tricksy but I caught myself, array.length gives you the length of an array as a number data type. Didn't think about this application. I assume this could be used to find the datatype of something deeply nested in an object or array using . or [] notation.
+// b) Verify and explain: Array.length gives you the length of an array as a number data type. typeof function gives you the data type as a string of whatever data type the data is.

@@ -98,7 +98,7 @@ console.log(combine(padres1984WorldSeriesRuns, padres1998WorldSeriesRuns)); // 9
 
 // Describe your process:
 //Can simple used the build in method .reverse but this will only work on an array.
-//First use .split("") on the string to form it into an array, then .reverse(), then .join("")
+//First use .split("") on the string to form it into an array, then .reverse() to reverse the array, then .join("") form it into a string.
 //Can be used all together within the log.
 
 const currentCohort = "Golf 2022"
@@ -122,6 +122,7 @@ console.log(myNumbers.lastIndexOf(givenValue2)); // 8
 
 // Describe your process:
 // Use the built in sort method .sort((a,b)=> b-a) to sort the array from largest to smallest
+//Could also just use the .sort() which will go smallest to largest then reverse the array.
 
 const sanDiegoSummerTemperatures = [79, 80, 72, 73, 82, 77, 76]
 // Expected output: [82, 80, 79, 77, 76, 73, 72]
@@ -131,3 +132,10 @@ const sanDiegoWinterTemperatures = [59, 68, 62, 59, 66, 67, 66]
 
 console.log(sanDiegoSummerTemperatures.sort((a,b) => b-a)); //[82, 80, 79, 77, 76, 73, 72]
 console.log(sanDiegoWinterTemperatures.sort((a,b) => b-a)); //[68, 67, 66, 66, 62, 59, 59]
+console.log(sanDiegoSummerTemperatures.sort().reverse()); //[82, 80, 79, 77, 76, 73, 72]
+console.log(sanDiegoWinterTemperatures.sort().reverse()); //[68, 67, 66, 66, 62, 59, 59]
+
+//testing to see if toUpperCase changes the string or creates a new string
+let string = "This is my string and I like it"
+string.toUpperCase()
+console.log(string); //This is my string and I like it
