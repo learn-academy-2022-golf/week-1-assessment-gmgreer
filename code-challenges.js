@@ -97,8 +97,8 @@ console.log(combine(padres1984WorldSeriesRuns, padres1998WorldSeriesRuns)); // 9
 // --------------------3) Create the code that will reverse the letters of a string using the test variable provided below.
 
 // Describe your process:
-//Can simple used the build in method .reverse but this will only work on an array.
-//First use .split("") on the string to form it into an array, then .reverse() to reverse the array, then .join("") form it into a string.
+//Can simply use the built in method .reverse but this will only work on an array.
+//First use .split("") on the string to form it into an array, then .reverse() to reverse the array, then .join("") to form it into a string.
 //Can be used all together within the log.
 
 const currentCohort = "Golf 2022"
@@ -139,3 +139,8 @@ console.log(sanDiegoWinterTemperatures.sort().reverse()); //[68, 67, 66, 66, 62,
 let string = "This is my string and I like it"
 string.toUpperCase()
 console.log(string); //This is my string and I like it
+
+//testing value vs reference
+let array = [1,2,3]
+let array2 = [1,2,3]
+console.log(array == array2); //false

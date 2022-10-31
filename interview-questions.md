@@ -8,7 +8,7 @@ Then, research the question to expand on your answer. Even if you feel you have 
 
 INSTRUCTOR EXAMPLE: What is a conditional statement?
 
-Your answer: A conditional statement is a statement that checks to see if the input meets a certain condition then performs some action or inaction based on that result. 
+Your answer: A conditional statement is a statement that checks to see if the input meets a certain condition then performs some action based on that result. 
 
 Researched answer: There are four conditional statements in Javascript:
 1. if
@@ -52,7 +52,7 @@ As for Github well, Github is all of the above on the cloud. It is just a place 
 
 Your answer: The and &&, or ||, and not ! operator are all boolean operators which when used in conditional statements will allow you to check if multiple or no condition is met.
 
-Researched answer: IF a value can be converted to true, the value is considered truth. If a value can be converted to false, the value is falsy.
+Researched answer: IF a value can be converted to true, the value is considered truthy. If a value can be converted to false, the value is falsy.
 Statemetns that can be converted to false are:
 . null
 . NaN which means not a number
@@ -64,20 +64,32 @@ Statemetns that can be converted to false are:
 
 Your answer:Index is the number value given to a peice of data in an array or string. It is part of a key: value where the index is the unique key that points to a value. For example in the array [1,2,3], array[1] will point to the value 2 because the array is zero indexed. The index 1 is the key to the value 2. This key value is important for keeping track of where the data actually is and allows us to quickly retrieve said data.
 
-Researched answer: I believe my above answer is adequate. When I research this I get a lot of methods for retreiving value by using the index which is what I described above.
+Researched answer:  When I research this I get a lot of methods for retreiving value by using the index which is what I described above.
 
 4. Compare and contrast arrays and strings. Please include ways in which they are the same and ways in which they are different.
 
-Your answer: First the similarities, both strings and arrays have an index key value pair that starts with 0. Both can use the method .length to check for their respective lengths. You can use .slice on both to remove a portion and put it into a new string. Important to note that this does not change the string.
+Your answer: First the similarities, both strings and arrays have an index key value pair that starts with 0. Both can use the method .length to check for their respective lengths. You can use .slice on both to remove a portion and put it into a new string or array. Important to note that this does not change the string.
 
-The differences, first strings are immutable meaning you can't change the string with any method such as push, pop, splice, reverse, shift, unshift basically anything that would actually change the value of the string, however you can turn a string into an array with .split. Then manipulate it with any array method listed above including sort and the join it back into a string using .join.
+The differences, first strings are immutable meaning you can't change the string with any method such as push, pop, splice, reverse, shift, unshift basically anything that would actually change the value of the string, however you can turn a string into an array with .split. Then manipulate it with any array method listed above including sort and then join it back into a string using .join.
 
-Researched answer: While it is true strings are immutable in javascript that is not true in all languages, many languages treat strings as reference types. I also realized that this may seem untrue if you look at toUpperCase and toLowerCase. I tested this at the bottom of the code-challenges.js file and showed that toUpperCase() and its opposite are actually creating a new string and not modifying the previous one. So if you wanted to change it permanately you would have to create a new variable with the string.toUpperCase().
+Researched answer: While it is true strings are immutable in javascript that is not true in all languages, many languages treat strings as reference types. This led me to research the difference between reference and value. In short Reference values just point to a place in memory where the value lives. Like an array for example:
+let array = [1,2,3]
+this array variable only references the arrays address in memory. If you actually logged the value of the array you would get something like 0X01. This is the address of the array in memory. In contrast a value type like a number:
+let number = 1
+This actually holds the value of the number and not the reference to its place in memory. Where this starts to matter can be in checking for equality. For example:
+If I have a different array say:
+let array2 = [1,2,3] and check to see if array and array2 are equal with a log:
+console.log(array == array2) 
+The result will be false, But if you say array2 = array then log they would be equal because then array2 is referencing the address of array. 
+If you said let number2 = 1 then logged:
+console.log(number2 == number) the result would be true because it doesn't point to an address in memory but the actual value.
+
+I also realized that string immutability may seem untrue if you look at toUpperCase and toLowerCase. I tested this at the bottom of the code-challenges.js file and showed that toUpperCase() and its opposite are actually creating a new string and not modifying the previous one. So if you wanted to change it permanately you would have to create a new variable with the string.toUpperCase().
 
 
 5. Give a brief description of proper pair programming techniques. What are the roles of each person?
 
-Your answer: Pair programming has a driver and a navigator. It is the job of the navigator to make all inputs into the code while the navigator instructs the driver on what to input. This allows for two sets of eyes to be on the document at all times and in some cases gives some ability to research and code at the same time. This cuts down on time correction errors as two people are much more likely to pick up on any small mistakes.
+Your answer: Pair programming has a driver and a navigator. It is the job of the navigator to make all inputs into the code while the navigator instructs the driver on what to input. This allows for two sets of eyes to be on the document at all times and in some cases gives some ability to research and code at the same time. This cuts down on time, and correction errors as two people are much more likely to pick up on any small mistakes.
 
 Researched answer: There are different styles of pair programming. 
 
@@ -125,4 +137,6 @@ person.fullName = function () {
 }
 All functions in javascript are first-class objects and have built in properties and methods. We see these as the built in methods such as .toString().
 
-5. Classes: Classes are a type of constructor for objects. They allow one to quickly create objects by having the properties of the object prebuilt into the class then initializing a new Class object by just passing in the details of the new object using dot notation. 
+5. Classes: Classes are a type of constructor for objects. They allow one to quickly create objects by having the properties of the object prebuilt into the class then initializing a new Class object by just passing in the details of the new object using dot notation. Classes can have methods just like objects that perform specific actions. A huge benefit off classes is by using a single constructed class you can create infinite new initiatiosn of that class. An example would be constructing linked lists. You could create a single class that performs all the operations of a linked list then just intitialize a new linked list class to create infinite linked lists with all the inbuilt insert, delete, and read functionality. 
+
+Classes are a fundamental tool in object oriented programming. Classes allow one to create inheritability as well as keeping code very well organized. There is a pretty lively debate on which is better, functional programming vs object oriented programming. My understanding is that you can create factory functions to do much the same thing as a class. 

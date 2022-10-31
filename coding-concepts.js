@@ -51,4 +51,4 @@ const dataTypes = ["number", "string", "Boolean", "undefined"]
 console.log(typeof dataTypes.length)
 
 // a) Your answer: "number"
-// b) Verify and explain: Array.length gives you the length of an array as a number data type. typeof function gives you the data type as a string of whatever data type the data is.
+// b) Verify and explain: Array.length gives you the length of an array as a number data type. The typeof function gives you the data type as a string of whatever data type the data is.
